@@ -188,7 +188,7 @@ Find examples where the TTC estimate of the Lidar sensor does not seem plausible
 
 Run several detector / descriptor combinations and look at the differences in TTC estimation. Find out which methods perform best and also include several examples where camera-based TTC estimation is way off. As with Lidar, describe your observations again and also look into potential reasons.
 
-I created a loop in code to test all possible combinations of detectors and descriptors and saved the results in a [CSV file](https://github.com/RustemIskuzhin/SFND-3D-Object-Tracking/blob/master/Evaluation.csv).
+I created a loop in code to test all possible combinations of detectors and descriptors and saved the results in a [Excel file](https://github.com/RustemIskuzhin/SFND-3D-Object-Tracking/blob/master/Evaluation.xlsx).
 
 The TOP3 detector / descriptor combinations as the best choice for our purpose of detecting keypoints on vehicles are:
 SHITOMASI/BRISK         
