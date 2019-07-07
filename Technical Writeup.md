@@ -197,6 +197,14 @@ IMAGE               | Description
 
 Run several detector / descriptor combinations and look at the differences in TTC estimation. Find out which methods perform best and also include several examples where camera-based TTC estimation is way off. As with Lidar, describe your observations again and also look into potential reasons.
 
+Some examples with wrong TTC estimate of the Camera:
+
+IMAGE               | Description
+--------------------| -------------------
+![alt text](https://github.com/RustemIskuzhin/SFND-3D-Object-Tracking/blob/master/images/TTC_Camera1.png) | TTC from Camera is negative because estimation uses vechicle points from right lane that return minXCurr > minXPrev. Need to delete right lane points.
+![alt text](https://github.com/RustemIskuzhin/SFND-3D-Object-Tracking/blob/master/images/TTC_Camera2.png) | TTC from Camera is negative because estimation uses vechicle points from right lane that return minXCurr > minXPrev. Need to delete right lane points.
+![alt text](https://github.com/RustemIskuzhin/SFND-3D-Object-Tracking/blob/master/images/TTC_Camera3.png) | TTC from Camera is negative infinity because medDistRatio == 1. Need to delete right lane points and check medDistRatio to avoid division by zero.
+
 I created a loop in code to test all possible combinations of detectors and descriptors and saved the results in a [Excel file](https://github.com/RustemIskuzhin/SFND-3D-Object-Tracking/blob/master/Evaluation.xlsx).
 
 The TOP3 detector / descriptor combinations as the best choice for our purpose of detecting keypoints on vehicles are:
