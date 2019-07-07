@@ -184,6 +184,15 @@ void computeTTCCamera(std::vector<cv::KeyPoint> &kptsPrev, std::vector<cv::KeyPo
 
 Find examples where the TTC estimate of the Lidar sensor does not seem plausible. Describe your observations and provide a sound argumentation why you think this happened.
 
+Some examples with wrong TTC estimate of the Lidar sensor:
+
+IMAGE               | Description
+--------------------| -------------------
+![alt text](https://github.com/RustemIskuzhin/SFND-3D-Object-Tracking/blob/master/images/TTC_Lidar1.png) | TTC from Lidar is not correct because of some outliers. Need to filter outliers.
+![alt text](https://github.com/RustemIskuzhin/SFND-3D-Object-Tracking/blob/master/images/TTC_Lidar2.png) | TTC from Lidar is negative because estimation uses mean of all Lidar points that return minXCurr > minXPrev. Need to delete Lidar points from preceding vehicle front mirrors.
+![alt text](https://github.com/RustemIskuzhin/SFND-3D-Object-Tracking/blob/master/images/TTC_Lidar3.png) | TTC from Lidar is not correct because of Lidar points from preceding vehicle front mirrors. Need to delete Lidar points from preceding vehicle front mirrors.
+
+
 #### 6. Performance Evaluation 2
 
 Run several detector / descriptor combinations and look at the differences in TTC estimation. Find out which methods perform best and also include several examples where camera-based TTC estimation is way off. As with Lidar, describe your observations again and also look into potential reasons.
